@@ -1,5 +1,6 @@
 import Dropdown from "./Dropdown";
 import {useState, useRef, useEffect} from "react";
+import {Link} from "react-router-dom";
 
 const SearchBar = () => {
   const areas = [
@@ -158,9 +159,11 @@ const SearchBar = () => {
           content={<DropdownTimeContent/>}
         />
       </div>
-      <div className="align-exact-center bg-secondary-light rounded-full w-10 md:w-16 h-10 md:h-16">
-        <i className="text-white fas fa-search w-3.5 md:w-5 h-3.5 md:h-3.5"/>
-      </div>
+      <Link to="/search">
+        <button className="align-exact-center bg-secondary-light rounded-full w-10 md:w-16 h-10 md:h-16">
+          <i className="text-white fas fa-search w-3.5 md:w-5 h-3.5 md:h-3.5"/>
+        </button>
+      </Link>
     </div>
   )
 }

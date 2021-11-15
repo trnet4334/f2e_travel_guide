@@ -1,4 +1,5 @@
 import Card from "../utilities/Card";
+import {Link} from "react-router-dom";
 
 const Result = () => {
   const selections = [
@@ -8,6 +9,9 @@ const Result = () => {
     { name: '小吃攤販', icon: 'fas fa-cheese' },
     { name: '其他', icon: 'fas fa-utensils' },
   ]
+  const images_1 = ['bg-feature-1', 'bg-feature-2', 'bg-feature-3', 'bg-feature-4',
+    'bg-feature-5', 'bg-feature-6', 'bg-feature-7', 'bg-feature-8']
+  const images_2 = ['bg-special-1', 'bg-special-2', 'bg-special-3', 'bg-special-4']
 
   const Content = () => (
     <div>
@@ -49,11 +53,14 @@ const Result = () => {
           </div>
         </div>
         <div className="flex flex-wrap justify-center">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((index) =>
-            <Card
-              content={<Content/>}
-              key={index}
-            />
+          {images_1.map((item, index) =>
+            <Link to="/restaurant">
+              <Card
+                content={<Content/>}
+                image={item}
+                key={index}
+              />
+            </Link>
           )}
         </div>
       </div>
@@ -76,11 +83,14 @@ const Result = () => {
           </div>
         </div>
         <div className="flex flex-wrap justify-center">
-          {[1, 2, 3, 4].map((index) =>
-            <Card
-              content={<Content/>}
-              key={index}
-            />
+          {images_2.map((item, index) =>
+            <Link to="/restaurant">
+              <Card
+                content={<Content/>}
+                image={item}
+                key={index}
+              />
+            </Link>
           )}
         </div>
       </div>

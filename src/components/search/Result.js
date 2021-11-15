@@ -3,12 +3,17 @@ import Pagination from "../utilities/Pagination";
 import Title from "./Title";
 import MobileMap from "./MobileMap";
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 const Result = () => {
   const [currentTab, setCurrentTab] = useState('list')
+  const images = ['bg-special-1', 'bg-special-2', 'bg-special-3', 'bg-special-4',]
+
   const Content = () => (
     <div className="md:ml-4 mt-5 md:mt-0">
-      <h4 className="text-xl font-bold font-inter text-black tracking-wider">Restaurant餐廳名稱</h4>
+      <Link to="/restaurant">
+        <h4 className="text-xl font-bold font-inter text-black tracking-wider">Restaurant餐廳名稱</h4>
+      </Link>
       <p className="font-inter text-base tracking-wider text-black mb-3">異國餐廳料理</p>
       <span className="flex items-center">
         <p className="font-inter text-sm text-black mr-0.5">價格</p>
@@ -45,7 +50,7 @@ const Result = () => {
   )
 
   return (
-    <section className="w-screen lg:w-[42.5%] lg:px-10 pt-10 lg:pt-20 pb-28">
+    <section className="w-full lg:w-[42.5%] lg:px-10 pt-10 lg:pt-20 pb-28">
       <div className="block lg:hidden mb-10 px-2">
         {
           currentTab === 'list' &&
@@ -78,11 +83,12 @@ const Result = () => {
         <div>
           <div className="w-full mb-20 px-2 lg:px-0">
             {
-              [1,2,3,4].map((item, index) =>
+              images.map((item, index) =>
                 <div>
                   <Card
                     key={index}
                     content={<Content/>}
+                    image={item}
                     cardDirection="row"
                   />
                   <div className="w-full h-[1px] bg-primary-light hidden lg:block"/>
