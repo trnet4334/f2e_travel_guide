@@ -18,7 +18,7 @@ const Result = () => {
           <p className="text-base ml-1.5">10km</p>
         </div>
         <div className="flex items-center ml-5">
-          <p className="mr-1 text-black text-sm">價格</p>
+          <p className="mr-1 text-black text-sm mr-0.5">價格</p>
           <i className="fas fa-dollar-sign text-gray-9 mx-0.5 w-4 h-4 md:w-5 md:h-5"/>
           <i className="fas fa-dollar-sign text-gray-4 mx-0.5 w-4 h-4 md:w-5 md:h-5"/>
           <i className="fas fa-dollar-sign text-gray-4 mx-0.5 w-4 h-4 md:w-5 md:h-5"/>

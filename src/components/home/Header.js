@@ -1,4 +1,4 @@
-import SearchBar from "./SearchBar";
+import SearchBar from "../utilities/SearchBar";
 
 const Header = () => {
   return (
@@ -18,7 +18,9 @@ const Header = () => {
         <span className="font-roboto font-bold text-base text-secondary-light tracking-widest">要吃東西，而且就是現在</span>
       </div>
       <div role="img" className="bg-header-img w-[740px] h-[550px] bg-cover bg-center absolute right-[17.5%] top-[50px]"/>
-      <SearchBar/>
+      <div className="absolute bottom-[4.5rem] left-[50%] -translate-x-1/2">
+        <SearchBar/>
+      </div>
     </section>
   )
 }
